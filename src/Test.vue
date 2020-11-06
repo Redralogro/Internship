@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/sami_branding.png">
-    <HelloWorld msg="Viện toán ứng dụng và tin học" age=65 />
+    <img alt="Vue logo" width="300px" src="./assets/woft.jpg">
+    <Test></Test>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Test from './components/Test.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    Test
   }
 }
 </script>
