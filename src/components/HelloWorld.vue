@@ -1,38 +1,42 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <button v-on:click="Add(10)" >Add </button>
-    <button v-on:click="Subtract(10)">Subtract </button>
-    <button v-on:click="age=0" >Reset </button> 
-    <p> {{ age }} năm thành lập </p>
+    <header>
+        <nav>
+            <div class="row">
+            
+                <ul class="main-nav js--main-nav">
+                    <li v-for="nav in nav_element" :key="nav.name"><a v-bind:href="nav.name">{{nav.label}} </a></li>
+                </ul>
+                <a class="mobile-nav-icon js--nav-icon"><i
+                            class="ion-navicon-round"></i></a>
+            </div>
+        </nav>
+        <div class="hero-text-box">
+            <h1>
+                Goodbye junk food.<br> Hello super healthy meals.
+            </h1>
+            <a href="#" class="btn btn-full js--scroll-to-plans">I’m hungry
+                </a>
+            <a href="#" class="btn btn-ghost js--scroll-to-start">Show me
+                    more</a>
+        </div>
+    </header>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String,
-    age: Number
-  },
-  value : {
-    characters: ['jone','ád','áda']
-  },
-  methods:{
-    Add: function (inc){
-      let number_age = Number(this.age);
-      number_age+=inc;
-      this.age = number_age; 
-      console.log (this.age); 
-    },
-    Subtract: function (dec){
-      if (this.age > 0){
-        if (this.age-dec < 0){
-           this.age = 0;
-          } else this.age-=dec;
-      } else this.age = 0;   
-    }
-  }
+  data() {
+        return {
+            nav_element: [
+              {name:'#features',label:'Food delivery'},
+              {name:'#works',label:'How it works'},
+              {name:'#cities',label:'Our cities'},
+              {name:'#plans',label:'Sign up'}
+             ]
+        };
+    }    
 }
 </script>
 
@@ -49,7 +53,5 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-a {
-  color: #42b983;
-}
+
 </style>
