@@ -1,9 +1,11 @@
 <template>
   <div class="hello">
-    <header>
+    
         <nav>
             <div class="row">
-            
+            <img src="../../assets/img/logo-white.png" alt="Omnifood
+                        logo" class="logo">
+            <img src="../../assets/img/logo.png" alt="Omnifood logo" class="logo-black">
                 <ul class="main-nav js--main-nav">
                     <li v-for="nav in nav_element" :key="nav.name"><a v-bind:href="nav.name">{{nav.label}} </a></li>
                 </ul>
@@ -11,16 +13,6 @@
                             class="ion-navicon-round"></i></a>
             </div>
         </nav>
-        <div class="hero-text-box">
-            <h1>
-                Goodbye junk food.<br> Hello super healthy meals.
-            </h1>
-            <a href="#" class="btn btn-full js--scroll-to-plans">I’m hungry
-                </a>
-            <a href="#" class="btn btn-ghost js--scroll-to-start">Show me
-                    more</a>
-        </div>
-    </header>
   </div>
 </template>
 
