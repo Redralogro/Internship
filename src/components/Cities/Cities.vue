@@ -1,28 +1,31 @@
 <template>
     <div class="col span-1-of-4 box">
-        <img src="../assets/img/lisbon-3.jpg" alt="Lisbon">
-        <h3>Lisbon</h3>
-        <div class="city-feature">
-            <i class="ion-ios-person icon-small"></i> 1600+ happy eaters
-        </div>
-        <div class="city-feature">
-            <i class="ion-ios-star icon-small"></i> 60+ top chefs
-        </div>
-        <div class="city-feature">
-            <i class="ion-social-twitter icon-small"></i>
-            <a href="#">@omnifood_lx</a>
-        </div>
-    </div>
+                    <img :src="`/img/${img}.jpg`" alt="Cities">
+                    <h3>{{city}}</h3>
+                    <div class="city-feature">
+                        <i class="ion-ios-person icon-small"></i> {{eaters}}
+                    </div>
+                    <div class="city-feature">
+                        <i class="ion-ios-star icon-small"></i> {{chefs}}
+                    </div>
+                    <div class="city-feature">
+                        <i class="ion-social-twitter icon-small"></i>
+                        <a href="#">{{twitter}}</a>
+                    </div>
+                </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  data() {
-        return {
-            
-        };
-    }    
+    name: 'Cities',
+  props :{
+   city: String,
+   eaters : String,
+   chefs : String,
+   twitter : String,
+   alt : String,
+   img : String,
+  }   
 }
 </script>
 
